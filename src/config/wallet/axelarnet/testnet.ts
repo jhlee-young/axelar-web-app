@@ -492,6 +492,58 @@ export const fetch: KeplrWalletChainConfig = {
   channelMap: FETCH_CHANNEL_MAP,
 }
 
+const XPLA_CHAIN_ID: string = "cube_47-5"
+const XPLA_RPC: string = "https://cube-rpc.xpla.dev"
+const XPLA_REST = "https://cube-lcd.xpla.dev"
+const XPLA_CHANNEL_MAP = {
+  axelar: "channel-108",
+}
+
+const xplaChainInfo: ChainInfo = {
+  chainId: XPLA_CHAIN_ID,
+  chainName: "XPLA Testnet",
+  rpc: XPLA_RPC,
+  rest: XPLA_REST,
+  bip44: { coinType: 60 },
+  bech32Config: Bech32Address.defaultBech32Config("xpla"),
+  currencies: [
+    {
+      coinDenom: "XPLA",
+      coinMinimalDenom: "axpla",
+      coinDecimals: 18,
+      coinGeckoId: "xpla",
+    },
+  ],
+  feeCurrencies: [
+    {
+      coinDenom: "XPLA",
+      coinMinimalDenom: "axpla",
+      coinDecimals: 18,
+      coinGeckoId: "xpla",
+    },
+  ],
+  stakeCurrency: {
+    coinDenom: "XPLA",
+    coinMinimalDenom: "axpla",
+    coinDecimals: 18,
+    coinGeckoId: "xpla",
+  },
+  coinType: 60,
+  gasPriceStep: {
+    low: 380000000000,
+    average: 850000000000,
+    high: 1000000000000
+  },
+  features: ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
+}
+export const xpla: KeplrWalletChainConfig = {
+  restEndpoint: XPLA_REST,
+  rpcEndpoint: XPLA_RPC,
+  chainId: XPLA_CHAIN_ID,
+  chainInfo: xplaChainInfo,
+  channelMap: XPLA_CHANNEL_MAP,
+}
+//** end xpla */
 
 export const allChains = {
   axelar,
@@ -502,5 +554,6 @@ export const allChains = {
   osmosis,
   sei,
   terra,
+  xpla,
 }
 export default allChains

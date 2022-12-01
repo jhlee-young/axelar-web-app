@@ -52,6 +52,10 @@ const blockExplorers = {
       name: "Fetch Explorer",
       url: "https://explore-dorado.fetch.ai/",
     },
+    xpla: {
+      name: "XPLA Explorer",
+      url: "https://explorer.xpla.io/testnet/",
+    },
   },
   testnet: {},
   local: {},
@@ -101,6 +105,10 @@ const blockExplorers = {
     kujira: {
       name: "Kujira Finder",
       url: "https://finder.kujira.app/kaiyo-1/",
+    },
+    xpla: {
+      name: "XPLA Explorer",
+      url: "https://explorer.xpla.io/mainnet/",
     },
   },
 }
